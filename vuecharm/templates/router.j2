@@ -1,0 +1,22 @@
+import Vue from 'vue';
+import VueRouter, { RouteConfig } from 'vue-router';
+
+Vue.use(VueRouter);
+
+const routes = [
+{%- for route in routes %}
+    {
+        path: '{{ route.path }}',
+        name: '{{ route.name }}',
+        component: () => import(/* webpackChunkName: "{{ route.name }}" */ '../views/{{ route.filename }}')
+    },
+{%- endfor %}
+];
+
+const router = new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
+});
+
+export default router;

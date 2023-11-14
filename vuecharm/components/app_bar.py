@@ -1,4 +1,4 @@
-from ..base import VueBase, VueComponent, VuePage
+from ..base import VueBase, VueComponent
 
 class AppBar(VueComponent):
     def render(self):

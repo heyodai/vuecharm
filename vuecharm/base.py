@@ -14,6 +14,3 @@ class VueBase(ABC):
 
 class VueComponent(VueBase):
     pass
-
-class VuePage(VueBase):
-    pass
